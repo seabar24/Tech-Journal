@@ -1,8 +1,9 @@
 # Sean's Tech-Journal
 <html>
 <header>
-<a href = "https://github.com/seabar24/Tech-Journal/wiki/VYOS-Tech-Journal-Entry"> VYOS</a>
+<a href = "https://github.com/seabar24/Tech-Journal/wiki/VYOS-Tech-Journal-Entry"> VYOS Journal Entry</a>
 </br></br>
-<a href = ""> Firewall Configs</a>
+<a href = "https://github.com/seabar24/Tech-Journal/blob/main/Firewall%20Configs.md"> Firewall Configs</a>
+</br></br>
 </header>
 </html>
