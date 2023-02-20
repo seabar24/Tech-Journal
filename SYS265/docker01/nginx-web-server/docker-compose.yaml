@@ -1,0 +1,36 @@
+version: '3'
+
+services:
+        db:
+                container_name: mongodb
+                environment:
+                        MONGO_INITDB_DATABASE: nginx
+                image: mongo:latest
+                ports:
+                        - "27017:27017"
+                volumes:
+                        - ./initialization/db:/docker-entrypoint-initdb.d
+                        - db-volume:/data/db
+        nginx:
+                image: nginx:latest
+                volumes:
+                        - ./nginx.conf:/etc/nginx/nginx.conf:ro
+                ports:
+                        - "8080:80"
+                restart: always
+        nginx-sean-server:
+                image: nginx:latest
+                volumes:
+                        - ./nginx-sean-server.html:/usr/share/nginx/html/index.html
+        nginx-sean-database:
+                depends_on:
+                        - db
+                environment:
+                        MONGO_INITIDB_DATABASE: nginx
+                image: mybackend:latest
+                ports:
+                        - "8400:8400"
+
+        volumes:
+                db_volume:
+
