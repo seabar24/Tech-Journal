@@ -8,5 +8,7 @@
 <a href = "https://github.com/seabar24/Tech-Journal/blob/main/Wazuh.md"> Wazuh</a>
 </br></br>
 <a href = "https://github.com/seabar24/Tech-Journal/blob/main/JUMP.md"> Jump</a>
+</br></br>
+<a href = "https://github.com/seabar24/Tech-Journal/blob/main/Netplan.md"> Netplan</a>
 </header>
 </html>
