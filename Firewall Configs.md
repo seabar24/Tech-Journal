@@ -13,5 +13,11 @@
   <a href = "https://github.com/seabar24/Tech-Journal/blob/main/fw01.config.week4.txt"> Week 4 fw01 config</a>
   </br>
   <a href = "https://github.com/seabar24/Tech-Journal/blob/main/fw-mgmt.config.week4.txt"> Week 4 fw-mgmt config</a>
+  </br></br>
+  Week 6:
+  </br>
+  <a href = "https://github.com/seabar24/Tech-Journal/blob/main/fw01.config.week6.txt"> Week 6 fw01 config</a>
+  </br>
+  <a href = "https://github.com/seabar24/Tech-Journal/blob/main/fw-mgmt.config.week6.txt"> Week 6 fw-mgmt config</a>
 </header>
 </html>
