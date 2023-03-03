@@ -1,0 +1,22 @@
+---
+- name: Install Apache using geerlingguy.apache
+  hosts: ansible1-sean
+  become: yes
+
+  roles:
+   - geerlingguy.apache
+  tasks: 
+  - name: add firewall rule
+    firewalld:
+      port: 80/tcp
+      permanent: true
+      state: enabled
+      immediate: yes
+  - name: Reload firewall
+    systemd:
+      name: firewalld
+      state: reloaded
+  - name: Reload Apache service
+    systemd:
+      name: httpd
+      state: reloaded

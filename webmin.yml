@@ -1,0 +1,91 @@
+---
+- name: webmin SYS265
+  hosts: webmin
+  become: true
+  vars:
+    install_utilities: true
+    firewalld_enable: true
+  roles:
+    - semuadmin.webmin
+
+  tasks:
+  - name: add firewall rule
+    firewalld:
+      port: 10000/tcp
+      permanent: true
+      state: enabled
+  - name: Add yum repository and gpg key for Redhat platforms.
+   yum_repository:
+      name: webmin
+      description: Webmin yum repo
+      baseurl: "{{ webmin_yum_repo }}"
+      mirrorlist: "{{ webmin_mirrorlist }}"
+      gpgkey: "{{ webmin_gpgkey }}"
+      gpgcheck: true
+      state: present
+    when: ansible_os_family == "RedHat"
+
+  - name: Add a gpg key for Debian platforms.
+    apt_key:
+      url: "{{ webmin_gpgkey }}"
+      state: present
+    when: ansible_os_family == "RedHat"
+
+  - name: Add apt repository for Debian platforms.
+    apt_repository:
+      repo: "{{ webmin_apt_repo }}"
+      state: present
+    when: ansible_os_family == "RedHat"
+
+  - name: Update apt cache for Debian platforms.
+    apt:
+      update_cache: true
+    when: ansible_os_family == "RedHat"
+
+  - name: Install https transport for Debian platforms.
+    package:
+      name:
+        - apt-transport-https
+      state: present
+    when: ansible_os_family == "RedHat"
+
+  - name: Install Webmin.
+    package:
+      name:
+        - webmin
+      state: present
+
+  - name: Install supporting packages if required.
+    package:
+      name:
+        - wget
+        - git
+        - ntpdate
+        - sntp
+        - smartmontools
+      state: present
+    when: install_utilities
+
+  - name: Configure Webmin systemd service.
+    template:
+      src: webmin.service.j2
+      dest: /etc/systemd/system/webmin.service
+      mode: 0755
+
+  - name: Stop running instance before restarting under systemd.
+    command: /etc/webmin/stop
+    register: webmin_service
+    changed_when: "'Stopping Webmin server' in webmin_service.stdout"
+
+  - name: Enable webmin as systemd service.
+    systemd:
+      state: stopped
+      enabled: true
+      daemon_reload: true
+      name: webmin
+
+  - name: Reboot machine.
+    reboot:
+      reboot_timeout: 3600
+      when: not webmin_disable_reboot
+
