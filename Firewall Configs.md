@@ -20,8 +20,8 @@
   </br>
   <a href = "https://github.com/seabar24/Tech-Journal/blob/main/fw-mgmt.config.week6.txt"> Week 6 fw-mgmt config</a>
   </br></br>
-  Edge01
-  </br>
+  **Edge01**
+  </br></br>
   Week 10:
   </br>
   <a href = "https://github.com/seabar24/Tech-Journal/blob/main/edge01.week10config.txt"> Week 10 edge01 config</a>
