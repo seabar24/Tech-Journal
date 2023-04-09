@@ -27,5 +27,11 @@
   <a href = "https://github.com/seabar24/Tech-Journal/blob/main/edge01.week10config.txt"> Week 10 edge01 config</a>
   </br>
   <a href = "https://github.com/seabar24/Tech-Journal/blob/main/fw-mgmt.week10config.txt"> Week 10 fw-mgmt config</a>
+  </br></br>
+  Week 12:
+  </br>
+  <a href = "https://github.com/seabar24/Tech-Journal/blob/main/edge01.week12config.txt"> Week 12 edge01 config</a>
+  </br>
+  <a href = "https://github.com/seabar24/Tech-Journal/blob/main/fw-mgmt.week12config.txt"> Week 12 w-mgmt config</a>
 </header>
 </html>
