@@ -32,6 +32,6 @@
   </br>
   <a href = "https://github.com/seabar24/Tech-Journal/blob/main/edge01.week12config.txt"> Week 12 edge01 config</a>
   </br>
-  <a href = "https://github.com/seabar24/Tech-Journal/blob/main/fw-mgmt.week12config.txt"> Week 12 w-mgmt config</a>
+  <a href = "https://github.com/seabar24/Tech-Journal/blob/main/fw-mgmt.week12config.txt"> Week 12 fw-mgmt config</a>
 </header>
 </html>
